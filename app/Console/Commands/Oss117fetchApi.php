@@ -8,23 +8,19 @@ use App\Console\Commands\Traits\QuotesDisplayer;
 use App\Facades\Oss117Api;
 use Illuminate\Console\Command;
 
-/**
- *
- */
+
 class Oss117fetchApi extends Command
 {
-    use ArgumentManager;
-    use ManageCharacters;
-    use QuotesDisplayer;
+    use ArgumentManager, ManageCharacters, QuotesDisplayer;
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
     protected $signature = 'oss117:quotes
-                        {--number=null : Le nombre de citations à afficher}
+                        {--characters=false : (à utiliser sans argument)Affiche la liste des personnages disponibles}
                         {--character=null : Le personnage dont on veut afficher les citations}
-                        {--characters=false : (à utiliser sans argument)Affiche la liste des personnages disponibles}';
+                        {--number=null : Le nombre de citations à afficher}';
 
     /**
      * The console command description.
